@@ -1,0 +1,15 @@
+{
+  "name": "chili-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marco Gabriel Saborrido",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.23.0"
+  }
+}

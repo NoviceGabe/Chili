@@ -1,0 +1,93 @@
+.card {
+  @include flexbox(column);
+  background: $primary-color;
+  border-radius: rem(25px);
+  overflow: hidden;
+
+  $overlay: #000;
+
+  &:hover {
+    cursor: pointer;
+
+    .card__img-wrapper {
+      background-color: $overlay;
+    }
+
+    img {
+      opacity: .8;
+    }
+  }
+
+  &__img-wrapper {
+    @include size(100%, 70%);
+
+    img {
+      @include size(100%);
+	}
+  }
+
+  &__content {
+    @include size(100%, 30%);
+    font-family: gothamBold;
+    padding: rem(20px) 0;
+
+
+    &__title {
+      color: $secondary-color;
+      text-transform: capitalize;
+	}
+
+    &__price {
+      color: $accent-color-3;
+	}
+  }
+}
+
+%btn {
+  border-radius: rem(35px);
+  border-style: solid;
+  border-width: rem(1px);
+  font-family: gothamBook;
+  font-size: rem(13px);
+  font-weight: bold;
+  padding: rem(7px) rem(25px);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  background: $primary-color;
+  border-color: $accent-color-2;
+  color: $accent-color-2;
+}
+
+.btn-secondary {
+  @extend %btn;
+  background: $accent-color-2;
+  border-color: $accent-color-2;
+  color: $primary-color;
+}
+
+.input {
+  background: $accent-color-1;
+  border: rem(1px) solid $accent-color-1;
+  border-radius: rem(35px);
+  padding: rem(13px) rem(20px);
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $secondary-color;
+    opacity: 1;
+  }
+
+}
+

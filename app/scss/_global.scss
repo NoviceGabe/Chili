@@ -1,0 +1,30 @@
+@include font-face(chunkfive, '../../public/assets/fonts/Chunkfive Ex.ttf', bold);
+@include font-face(gothamBold, '../../public/assets/fonts/Gotham-Bold.otf');
+@include font-face(gothamBook, '../../public/assets/fonts/Gotham-Book 4.otf');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+
+html { font-size: 100%; }
+
+body {
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-family: $font-stack;
+  font-size: rem(16px);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+

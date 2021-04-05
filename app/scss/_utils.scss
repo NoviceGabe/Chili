@@ -1,0 +1,188 @@
+.sticky-top{
+  position: fixed !important;
+  top: 0;
+  z-index: 100;
+}
+
+// flex classes
+.flex {
+  display: flex;
+
+  &-#{'inline'}{
+    display: inline-flex;
+  }
+
+  &-#{'direction-col'}{
+    flex-direction: column;
+  }
+
+  &-#{'direction-row'}{
+    flex-direction: row;
+  }
+
+  $justify-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      around: space-around,
+      between: space-between,
+      evenly: space-evenly
+  );
+  $align-positions: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      stretch: stretch,
+      baseline: baseline
+  );
+
+  @mixin just-align($name,$prop,$arr) {
+      @each $mod, $dir in $arr {
+          &-#{$name}-#{$mod} {
+              #{$prop}: #{$dir};
+          }
+      }
+  }
+
+  @include just-align('align','align-items', $align-positions);
+  @include just-align('justify','justify-content', $justify-positions);
+}
+
+
+// visibility classes
+
+.active{
+  display: flex !important;
+}
+
+.hide {
+  display:none;
+}
+
+.show-block {
+  display:block;
+}
+
+.show-flex{
+  display: flex;
+}
+
+.#{'hide-'} {
+  &xxxs {
+    @media screen and (min-width: map-get($breakpoints, xxxs)) {
+      display:none!important;
+    }
+  }
+  &xxs {
+    @media screen and (min-width: map-get($breakpoints, xxs)) {
+      display:none!important;
+    }
+  }
+  &xs {
+    @media screen and (min-width: map-get($breakpoints, xs)) {
+      display:none!important;
+    }
+  }
+  &sm {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      display:none!important;
+    }
+  }
+  &md {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display:none!important;
+    }
+  }
+  &lg {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      display:none!important;
+    }
+  }
+
+  &xlg {
+    @media screen and (min-width: map-get($breakpoints, xlg)) {
+      display:none!important;
+    }
+  }
+}
+
+.#{'show-block-'} {
+  &xxxs {
+    @media screen and (min-width: map-get($breakpoints, xxxs)) {
+      display:block!important;
+    }
+  }
+  &xxs {
+    @media screen and (min-width: map-get($breakpoints, xxs)) {
+      display:block!important;
+    }
+  }
+
+  &xs {
+    @media screen and (min-width: map-get($breakpoints, xs)) {
+      display:block!important;
+    }
+  }
+  &sm {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      display:block!important;
+    }
+  }
+  &md {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display:block!important;
+    }
+  }
+  &lg {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      display:block!important;
+    }
+  }
+  &xlg {
+    @media screen and (min-width: map-get($breakpoints, xlg)) {
+      display:block!important;
+    }
+  }
+}
+
+.#{'show-flex-'} {
+  &xxxs {
+    @media screen and (min-width: map-get($breakpoints, xxxs)) {
+      display:flex!important;
+    }
+  }
+
+  &xxs {
+    @media screen and (min-width: map-get($breakpoints, xxs)) {
+      display:flex!important;
+    }
+  }
+
+  &xs {
+    @media screen and (min-width: map-get($breakpoints, xs)) {
+      display:flex!important;
+    }
+  }
+  &sm {
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      display:flex!important;
+    }
+  }
+  &md {
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      display:flex!important;
+    }
+  }
+  &lg {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      display:flex!important;
+    }
+  }
+   &xlg {
+    @media screen and (min-width: map-get($breakpoints, xlg)) {
+      display:flex!important;
+    }
+  }
+}
+
+

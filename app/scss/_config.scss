@@ -1,0 +1,25 @@
+$base-size: 16;
+$font-stack: chunkfive;
+
+// color schemes
+$primary-color: #f6f2ed;
+$secondary-color: #673826;
+$accent-color-1: #ece1d0;
+$accent-color-2: #be3b30;
+$accent-color-3: #839a50;
+$accent-color-4: #375c6f;
+
+
+// A map of breakpoints.
+$breakpoints: (
+  xxxs: 280px,
+  xxs: 320px,
+  xs: 481px,
+  sm: 641px,
+  md: 961px,
+  lg: 1025px,
+  xlg: 1281px
+);
+
+
+$banner-img: '../../public/assets/img/herobanner.png';

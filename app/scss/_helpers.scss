@@ -1,0 +1,53 @@
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($base-size)}rem;
+}
+
+@function em($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($base-size)}em;
+}
+
+@mixin breakpoint($point) {
+   @media only screen and (min-width: map-get($breakpoints, $point)) {
+         @content;
+    }
+}
+
+@mixin font-face($name, $path, $weight: normal, $style: normal) {
+   @font-face {
+   font-family: "#{$name}";
+   src: url("#{$path}");
+   font-weight: $weight;
+   font-style: $style;
+ }
+}
+
+@mixin flexbox($direction: row, $main: flex-start, $cross: stretch, $wrap: nowrap, $important: false){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $main;
+	align-items: $cross;
+	flex-wrap: $wrap;
+}
+
+
+@mixin abs-position($top, $right, $bottom, $left) {
+   position: absolute; 
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+}
+
+@mixin size($width: 100%, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin reset(){
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
