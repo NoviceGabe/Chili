@@ -257,21 +257,21 @@
 
 @font-face {
   font-family: "chunkfive";
-  src: url("../../public/assets/fonts/Chunkfive Ex.ttf");
+  src: url("./../../public/assets/fonts/Chunkfive Ex.ttf");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothamBold";
-  src: url("../../public/assets/fonts/Gotham-Bold.otf");
+  src: url("./../../public/assets/fonts/Gotham-Bold.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "gothamBook";
-  src: url("../../public/assets/fonts/Gotham-Book 4.otf");
+  src: url("./../../public/assets/fonts/Gotham-Book 4.otf");
   font-weight: normal;
   font-style: normal;
 }
