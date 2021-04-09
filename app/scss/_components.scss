@@ -1,4 +1,35 @@
-.card {
+.c-toggle {
+
+  &__block {
+    $black: #000;
+    background-color: $black;
+    display: block;
+    height: 3px;
+    transform-origin: 3px 2px;
+    transition: all 300ms ease-in-out;
+    width: 26px;
+  }
+
+  &__block:not(:last-child) {
+    margin-bottom: 4px;
+	}
+
+  &.open {
+    > :first-child {
+      transform: rotate(45deg);
+		}
+
+    > :nth-child(2) {
+      opacity: 0;
+    }
+
+    > :last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.c-fav-card {
   @include flexbox(column);
   background: $primary-color;
   border-radius: rem(25px);
@@ -9,7 +40,7 @@
   &:hover {
     cursor: pointer;
 
-    .card__img-wrapper {
+    .c-fav-card__img-wrapper {
       background-color: $overlay;
     }
 
@@ -20,27 +51,56 @@
 
   &__img-wrapper {
     @include size(100%, 70%);
+  }
 
-    img {
-      @include size(100%);
-	}
+  &__img {
+    @include size(100%);
   }
 
   &__content {
     @include size(100%, 30%);
     font-family: gothamBold;
     padding: rem(20px) 0;
-
-
-    &__title {
-      color: $secondary-color;
-      text-transform: capitalize;
-	}
-
-    &__price {
-      color: $accent-color-3;
-	}
   }
+
+  &__title {
+    color: $secondary-color;
+    text-transform: capitalize;
+  }
+
+  &__price {
+    color: $accent-color-3;
+  }
+}
+
+.c-promo-card {
+  margin-bottom: rem(10px);
+  // breakpoint
+  @include breakpoint(lg) {
+    flex-basis: 50%;
+  }
+
+  img {
+    width: 100%;
+    border-radius: rem(25px);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:nth-child(even) {
+    @include breakpoint(lg) {
+      padding-left: rem(10px);
+    }
+  }
+
+  &:nth-child(odd) {
+    @include breakpoint(lg) {
+      padding-right: rem(10px);
+    }
+  }
+
 }
 
 %btn {
@@ -60,21 +120,21 @@
   }
 }
 
-.btn-primary {
+.c-btn-primary {
   @extend %btn;
   background: $primary-color;
   border-color: $accent-color-2;
   color: $accent-color-2;
 }
 
-.btn-secondary {
+.c-btn-secondary {
   @extend %btn;
   background: $accent-color-2;
   border-color: $accent-color-2;
   color: $primary-color;
 }
 
-.input {
+.c-input {
   background: $accent-color-1;
   border: rem(1px) solid $accent-color-1;
   border-radius: rem(35px);

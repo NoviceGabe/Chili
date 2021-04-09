@@ -1,6 +1,6 @@
-const hamburger = document.querySelector('#hamburger');
-const menu = document.querySelector('#menu-mobile');
-const header = document.querySelector('header');
+const hamburger = document.querySelector('.js-hamburger');
+const menu = document.querySelector('.js-menu-mobile');
+const header = document.querySelector('.l-header');
 
 window.addEventListener('scroll', ()=>{
 	header.classList.toggle('sticky-top', window.scrollY > 0);
@@ -53,20 +53,20 @@ const card = (data) =>{
 	let path = './assets/img/';
 
 	return `
-		<div class="card">
-			<div class="card__img-wrapper">
-				<img src="${path}${data?.img ?? 'featured1.png'}">
+		<div class="c-fav-card">
+			<div class="c-fav-card__img-wrapper">
+				<img class="c-fav-card__img" src="${path}${data?.img ?? 'featured1.png'}">
 			</div>
-			<div class="card__content">
-				<h3 class="card__content__title">${data?.title ?? 'Alfredo Pasta'}</h3>
-				<p class="card__content__price">${data?.price ?? 'Free'}</p>
+			<div class="c-fav-card__content">
+				<h3 class="c-fav-card__title">${data?.title ?? 'Alfredo Pasta'}</h3>
+				<p class="c-fav-card__price">${data?.price ?? 'Free'}</p>
 			</div>
 		</div>
 	`;
 }
 
 (()=>{
-	const favContainer = document.querySelector('.main__favorites__content');
+	const favContainer = document.querySelector('.l-main__favorites-content');
 	let html = '';
 
 	favorites.forEach(item => {

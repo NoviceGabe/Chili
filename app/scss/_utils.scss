@@ -4,8 +4,12 @@
   z-index: 100;
 }
 
+.active{
+  display: flex !important;
+}
+
 // flex classes
-.flex {
+.u-flex {
   display: flex;
 
   &-#{'inline'}{
@@ -50,24 +54,19 @@
 
 
 // visibility classes
-
-.active{
-  display: flex !important;
-}
-
-.hide {
+.u-hide {
   display:none;
 }
 
-.show-block {
+.u-show-block {
   display:block;
 }
 
-.show-flex{
+.u-show-flex{
   display: flex;
 }
 
-.#{'hide-'} {
+.#{'u-hide-'} {
   &xxxs {
     @media screen and (min-width: map-get($breakpoints, xxxs)) {
       display:none!important;
@@ -106,7 +105,7 @@
   }
 }
 
-.#{'show-block-'} {
+.#{'u-show-block-'} {
   &xxxs {
     @media screen and (min-width: map-get($breakpoints, xxxs)) {
       display:block!important;
@@ -145,7 +144,7 @@
   }
 }
 
-.#{'show-flex-'} {
+.#{'u-show-flex-'} {
   &xxxs {
     @media screen and (min-width: map-get($breakpoints, xxxs)) {
       display:flex!important;
